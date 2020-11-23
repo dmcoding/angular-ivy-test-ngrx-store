@@ -1,0 +1,20 @@
+<hello></hello>
+<div class="row justify-content-center">
+	<div class="col-10 col-md-6">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Tarea</span>
+      </div>
+      <textarea type="text" class="form-control" placeholder="Ingresa tu descripción" aria-label="Tarea" aria-describedby="basic-addon1" rows="5" [formControl]="todo" id="todo"></textarea>
+    </div>
+    <p class="text-danger" *ngIf="(todo.dirty || todo.touched) && todo.errors">
+        <small class="form-text text-muted" *ngIf="todo.errors.required">Elemento requerido</small>
+        <small class="form-text text-muted" *ngIf="todo.errors.minlength"></small>
+      </p>
+  </div>
+</div>
+<div class="row justify-content-center">
+	<div class="col-10 col-md-6">
+    <button type="button" class="btn btn-outline-primary btn-block" (click)="save()" [disabled]="todo.invalid">Guardar</button>
+	</div>
+</div>

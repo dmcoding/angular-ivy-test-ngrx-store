@@ -1,0 +1,12 @@
+<div class="jumbotron">
+	<h1 class="display-4">Tarea!</h1>
+	<ng-template *ngIf="todos$ | async as todo">
+		<ng-template *ngIf="todo?.text">
+			<p class="lead">{{ todo.text }}</p>
+			<hr class="my-4" />
+			<button class="btn btn-primary btn-lg" href="#" role="button">
+          Modificar
+        </button>
+		</ng-template>
+	</ng-template>
+</div>
